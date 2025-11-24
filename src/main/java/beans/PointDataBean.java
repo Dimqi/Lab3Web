@@ -10,7 +10,6 @@ import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import model.CheckArea;
-import model.Point;
 
 @Named
 @SessionScoped
@@ -31,7 +30,9 @@ public class PointDataBean implements Serializable {
     
     @PostConstruct
     public void init() {
+    	setX(new BigDecimal(0));
         setR(new BigDecimal(1));
+        
     }
     
     

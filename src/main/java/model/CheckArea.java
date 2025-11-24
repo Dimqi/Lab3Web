@@ -14,15 +14,15 @@ public class CheckArea {
 		BigDecimal halfR2 = halfR.pow(2);
 		
 		
-		if(y.compareTo(zeroBD)<0 && x.compareTo(zeroBD)<0 && x.compareTo(halfR.negate())>0 && y.compareTo(r.negate())>0) {
+		if(y.compareTo(zeroBD)<=0 && x.compareTo(zeroBD)<=0 && x.compareTo(halfR.negate())>=0 && y.compareTo(r.negate())>=0) {
 			hit = true;
 		}
 		
-		if(y.compareTo(zeroBD)>0 && x.compareTo(zeroBD)>0 && y.compareTo(yBoundaryTriangle)<0){
+		if(y.compareTo(zeroBD)>=0 && x.compareTo(zeroBD)>=0 && y.compareTo(yBoundaryTriangle)<=0){
 			hit = true;
 		}
 		
-		if(y.compareTo(zeroBD)>0 && x.compareTo(zeroBD)<0 && x2.add(y2).compareTo(halfR2)<0) {
+		if(y.compareTo(zeroBD)>=0 && x.compareTo(zeroBD)<=0 && x2.add(y2).compareTo(halfR2)<=0) {
 			hit = true;
 		}
 		

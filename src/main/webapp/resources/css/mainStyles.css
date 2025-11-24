@@ -16,7 +16,7 @@ body {
 #input-form-wrapper{
 	display:block;
 	width: 300px;
-	height:300px;
+	height: 360px;
 	border: 4px solid #32bba2;
 	padding: 10px;
 	border-radius: 20px;
@@ -51,13 +51,11 @@ svg{
 
 
 
-
-#toast-container{
+#toast-container {
   position: fixed; 
   top: 3%; 
   right: 3%; 
   z-index: 9999; 
-  
 }
 
 #toast-container td {
@@ -67,29 +65,44 @@ svg{
   border-radius: 5px;
   font-family: Arial, sans-serif;
   font-size: 14px;
-  animation: fadeIn 0.5s, fadeOut 0.5s 3.5s;
+  animation: fadeOut 4s forwards;
 }
 
-
-
-#toast-container .error{
+#toast-container .error {
   background: rgba(255, 0, 0, 0.9); 
 }
 
-#toast-container .success{
+#toast-container .success {
   background: rgba(0, 255, 0, 0.9); 
 }
 
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
 @keyframes fadeOut {
-  from { opacity: 1; transform: translateY(0); }
-  to   { opacity: 0; transform: translateY(-10px); }
+  0% {
+    opacity: 1;
+	transform: translateY(-10px);
+  }
+  20%{
+	  opacity: 1;
+	  transform: translateY(0px);
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+	transform: translateY(10px);
+	
+  }
 }
+
+.toast-row {
+  opacity: 1;
+  visibility: visible;
+  animation:fadeOut 4s;
+
+}
+
 
 
 
@@ -115,14 +128,14 @@ svg{
     background-color: #45a049;   
 }
 
-
 #result-table .results-table.ui-datatable.ui-widget {
+	max-height: 400px;
+    overflow-y: auto; 
     width: 90%;
     border-collapse: collapse;
     margin: 5% 5%;
 }
 
-/* Заголовки столбцов */
 #result-table .results-table.ui-datatable.ui-widget th.ui-state-default {
     background: #34495e;
     color: white;
@@ -130,7 +143,7 @@ svg{
 	text-align: center;
 }
 
-/* Ячейки таблицы */
+
 #result-table .results-table.ui-datatable.ui-widget td  {
     padding: 10px;
     border: 1px solid #ddd;
@@ -138,13 +151,11 @@ svg{
 	
 }
 
-/* Попадание */
 #result-table .results-table.ui-datatable.ui-widget .hit {
     color: green;
     font-weight: bold;
 }
 
-/* Мимо */
 #result-table .results-table.ui-datatable.ui-widget .miss{
     color: red;
     font-weight: bold;
